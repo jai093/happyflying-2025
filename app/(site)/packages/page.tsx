@@ -33,7 +33,16 @@ export default function PackagesPage() {
   const [visibleCount, setVisibleCount] = useState(12);
 
   useEffect(() => {
-    fetch("/api/admin/packages")
+    // Add timestamp to bypass browser cache
+    const timestamp = Date.now();
+    fetch(`/api/admin/packages?t=${timestamp}`, {
+      cache: "no-store",
+      headers: {
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0"
+      }
+    })
       .then((r) => r.json())
       .then((data) => setPackages(data.packages ?? []))
       .catch(() => setPackages([]))
