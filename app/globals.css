@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #FFFFFF;
+  color: #0A1320;
+}
+
+.dark body {
+  background: #060C14;
+  color: #F8FAFC;
+}
+
+::selection {
+  background: #EAB308;
+  color: #0A1320;
+}
+
+.glass {
+  border: 1px solid rgba(140, 183, 204, 0.45);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 80px rgba(10, 19, 32, 0.08), inset 0 0 0 1px rgba(234, 179, 8, 0.3);
+  backdrop-filter: blur(22px);
+}
+
+.dark .glass {
+  border-color: rgba(140, 183, 204, 0.35);
+  background: rgba(10, 19, 32, 0.88);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(234, 179, 8, 0.35);
+}
+
+.gold-line {
+  border-color: rgba(234, 179, 8, 0.5);
+}
+
+.section {
+  padding: 6rem 1.25rem;
+}
+
+.container-premium {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.partner-marquee {
+  animation: partner-scroll 28s linear infinite;
+}
+
+.partner-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes partner-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.masonry {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 1rem;
+  }
+
+  .masonry {
+    column-count: 1;
+  }
+}
+
+/* Hide the FlyAgent tab when the page is rendered in embed mode */
+body.embedded-mode #view-tab-agent { display: none !important; }
+
+/* Responsive embed styling */
+.happy-flying-embed {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+@media (max-width: 768px) {
+  .happy-flying-embed {
+    min-height: 600px;
+  }
+}
+
