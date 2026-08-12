@@ -70,7 +70,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <Link
             href="/"
             className="shrink-0 overflow-hidden rounded-2xl sm:rounded-[30px] border border-sky/40 bg-white shadow-premium"
-            style={{ height: "64px", width: "170px" }}
+            style={{ height: "64px", width: "150px" }}
             aria-label="Happy Flying Tours and Travels home"
           >
             <BrandLogo size="sm" />
