@@ -70,7 +70,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <Link
             href="/"
             className="shrink-0 overflow-hidden rounded-2xl sm:rounded-[30px] border border-sky/40 bg-white shadow-premium"
-            style={{ height: "64px", width: "200px" }}
+            style={{ height: "64px", width: "170px" }}
             aria-label="Happy Flying Tours and Travels home"
           >
             <BrandLogo size="sm" />
@@ -176,7 +176,7 @@ function Footer() {
     <footer className="border-t border-sky/30 bg-[#0A1320] px-4 sm:px-5 py-10 sm:py-14 text-white">
       <div className="container-premium grid gap-6 sm:gap-10 md:gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="mb-3 sm:mb-4 overflow-hidden rounded-lg sm:rounded-[20px] bg-white" style={{ width: "200px", height: "58px" }}>
+          <div className="mb-3 sm:mb-4 overflow-hidden rounded-lg sm:rounded-[20px] bg-white" style={{ height: "64px", width: "170px" }}>
             <BrandLogo size="sm" />
           </div>
           <p className="max-w-sm text-sm sm:text-base text-white/70">Where every journey takes wing with elegance, care, and unforgettable discovery.</p>
