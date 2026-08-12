@@ -38,7 +38,7 @@ function BrandLogo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
   return (
     <div className={`relative flex-shrink-0 ${dims[size]}`}>
       <Image
-        src="/happyflyinglogo.jpeg"
+        src="/happyflyinglogo.png"
         alt="HappyFlying Tours & Travels LLP"
         fill
         sizes="(max-width: 768px) 200px, 280px"
