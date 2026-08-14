@@ -21,27 +21,6 @@ const navItems = [
   ["Contact", "/contact"]
 ];
 
-function BrandLogo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
-  // Logo JPEG is a wide banner ~3.5:1 ratio with white background
-  const dims = {
-    sm: "w-[200px] h-[58px]",
-    md: "w-[280px] h-[80px]",
-    lg: "w-[260px] h-[74px]",
-  };
-  return (
-    <div className={`relative flex-shrink-0 ${dims[size]}`}>
-      <Image
-        src="/happyflyinglogo.png"
-        alt="HappyFlying Tours & Travels LLP"
-        fill
-        sizes="(max-width: 768px) 200px, 280px"
-        className="object-contain object-left"
-        priority
-      />
-    </div>
-  );
-}
-
 export function AppShell({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -58,21 +37,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-mist text-ocean transition-colors duration-500 dark:bg-[#060C14] dark:text-white">
-      <motion.div className="fixed left-0 top-0 z-[70] h-0.5 sm:h-1 origin-left bg-gradient-to-r from-sky via-sunset to-teal" style={{ scaleX }} />
-      <header className="fixed inset-x-0 top-2 sm:top-3 z-50 px-2 sm:px-3">
-        <div className="container-premium flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/"
-            className="shrink-0 overflow-hidden rounded-2xl sm:rounded-[30px] border border-sky/40 bg-white shadow-premium"
-            style={{ height: "64px", width: "150px" }}
-            aria-label="Happy Flying Tours and Travels home"
-          >
-            <BrandLogo size="sm" />
-          </Link>
-
 
   return (
     <div className="min-h-screen bg-mist text-ocean transition-colors duration-500">
@@ -226,12 +190,16 @@ function Footer() {
     <footer className="border-t border-sky/30 bg-[#0A1320] px-4 sm:px-5 py-10 sm:py-14 text-white">
       <div className="container-premium grid gap-6 sm:gap-10 md:gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="inline-block mb-3 sm:mb-4 hover:opacity-90 transition-opacity" aria-label="Happy Flying Tours & Travels home">
-            <div className="mb-3 sm:mb-4 overflow-hidden rounded-lg sm:rounded-[20px] bg-white" style={{ height: "64px", width: "170px" }}>
-              <BrandLogo size="sm" />
+          <Link href="/" className="inline-block mb-3 sm:mb-4 hover:opacity-90 transition-opacity">
+            <div className="relative w-[150px] h-[50px] sm:w-[150px] sm:h-[50px] flex-shrink-0">
+              <Image
+                src="/happyflyinglogo.png"
+                alt="Happy Flying Tours & Travels"
+                fill
+                className="object-contain object-left"
+              />
             </div>
           </Link>
-
           <p className="max-w-sm text-sm sm:text-base text-white/70">Where every journey takes wing with elegance, care, and unforgettable discovery.</p>
           <p className="mt-2 sm:mt-3 text-xs text-slate-300 leading-relaxed">No 145, 3rd Floor, 80 Feet Road KHB Colony, 5th Block, Koramangala, Bangalore, Karnataka 560034</p>
           <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-teal font-semibold">Email: operations@happyflyingtravels.com</p>
