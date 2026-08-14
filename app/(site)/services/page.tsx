@@ -17,7 +17,20 @@ export default function ServicesPage() {
   return (
     <section className="section pt-32">
       <div className="container-premium">
-        <SectionHeading eyebrow="Services" title="Every travel service wrapped in one premium planning layer" text="From visa paperwork to private yachts, each service is designed to reduce decisions while increasing delight." />
+        <Reveal className="max-w-3xl mx-auto text-center space-y-4 mb-12">
+          <span className="inline-flex items-center gap-2 rounded-full border border-sky/40 bg-sky/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-sky dark:text-sky-300">
+            Services
+          </span>
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-ocean dark:text-white">
+            Every travel service
+            <span className="block bg-gradient-to-r from-sky via-sunset to-teal bg-clip-text text-transparent">
+              wrapped in one premium planning layer
+            </span>
+          </h1>
+          <p className="text-lg text-ocean/80 dark:text-slate-300">
+            From visa paperwork to private yachts, each service is designed to reduce decisions while increasing delight.
+          </p>
+        </Reveal>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map(({ ...service }, index) => {
             const imagePath = serviceImages[service.title];
