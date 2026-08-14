@@ -144,7 +144,7 @@ export default function EnquiryModal({
   if (!isMounted || !isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-end px-4 pb-6 pointer-events-none md:p-6">
+    <div className="fixed inset-0 z-40 flex items-end sm:items-center justify-center sm:justify-end p-4 sm:p-6 md:p-8 pointer-events-none">
       <div className="relative w-full max-w-sm rounded-[28px] border border-sky/30 bg-white shadow-2xl dark:bg-[#0A1320] dark:border-sky/40 overflow-hidden animate-in fade-in slide-in-from-right-5 duration-300 pointer-events-auto">
         {/* Close Button */}
         <button
@@ -161,9 +161,9 @@ export default function EnquiryModal({
         </div>
 
         {/* Content */}
-        <div className="p-8">
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold text-ocean dark:text-white mb-2">
+        <div className="p-4 sm:p-5">
+          <div className="mb-3">
+            <h2 className="text-xl sm:text-2xl font-bold text-ocean dark:text-white mb-1">
               Plan Your Journey
             </h2>
             <p className="text-sm text-ocean/70 dark:text-white/70">
@@ -175,18 +175,18 @@ export default function EnquiryModal({
           {message.type === "success" ? (
             <div className="flex flex-col items-center justify-center py-6">
               <CheckCircle
-                size={48}
+                size={40}
                 className="text-teal mb-4 animate-bounce"
               />
-              <p className="text-center text-ocean dark:text-white font-semibold">
+              <p className="text-center text-sm text-teal font-semibold">
                 {message.text}
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-2.5">
               {/* Name Input */}
               <div>
-                <label className="block text-sm font-semibold text-ocean dark:text-white mb-2">
+                <label className="block text-xs sm:text-sm font-semibold text-ocean dark:text-white mb-1">
                   Name *
                 </label>
                 <input
@@ -197,13 +197,13 @@ export default function EnquiryModal({
                   placeholder="Your full name"
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-2.5 rounded-lg border border-sky/30 bg-white/50 dark:bg-white/5 text-ocean dark:text-white placeholder:text-ocean/40 dark:placeholder:text-white/40 focus:outline-none focus:border-sky focus:ring-2 focus:ring-sky/20 transition disabled:opacity-50"
+                  className="w-full px-4 py-2 rounded-lg border border-sky/30 bg-white/50 dark:bg-white/5 text-ocean dark:text-white placeholder:text-ocean/40 dark:placeholder:text-white/40 focus:outline-none focus:border-sky focus:ring-2 focus:ring-sky/20 transition disabled:opacity-50"
                 />
               </div>
 
               {/* Email Input */}
               <div>
-                <label className="block text-sm font-semibold text-ocean dark:text-white mb-2">
+                <label className="block text-xs sm:text-sm font-semibold text-ocean dark:text-white mb-1">
                   Email *
                 </label>
                 <input
@@ -214,13 +214,13 @@ export default function EnquiryModal({
                   placeholder="your@email.com"
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-2.5 rounded-lg border border-sky/30 bg-white/50 dark:bg-white/5 text-ocean dark:text-white placeholder:text-ocean/40 dark:placeholder:text-white/40 focus:outline-none focus:border-sky focus:ring-2 focus:ring-sky/20 transition disabled:opacity-50"
+                  className="w-full px-4 py-2 rounded-lg border border-sky/30 bg-white/50 dark:bg-white/5 text-ocean dark:text-white placeholder:text-ocean/40 dark:placeholder:text-white/40 focus:outline-none focus:border-sky focus:ring-2 focus:ring-sky/20 transition disabled:opacity-50"
                 />
               </div>
 
               {/* Mobile Input */}
               <div>
-                <label className="block text-sm font-semibold text-ocean dark:text-white mb-2">
+                <label className="block text-xs sm:text-sm font-semibold text-ocean dark:text-white mb-1">
                   Mobile *
                 </label>
                 <input
@@ -231,28 +231,28 @@ export default function EnquiryModal({
                   placeholder="+91 XXXXXXXXXX"
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-2.5 rounded-lg border border-sky/30 bg-white/50 dark:bg-white/5 text-ocean dark:text-white placeholder:text-ocean/40 dark:placeholder:text-white/40 focus:outline-none focus:border-sky focus:ring-2 focus:ring-sky/20 transition disabled:opacity-50"
+                  className="w-full px-4 py-2 rounded-lg border border-sky/30 bg-white/50 dark:bg-white/5 text-ocean dark:text-white placeholder:text-ocean/40 dark:placeholder:text-white/40 focus:outline-none focus:border-sky focus:ring-2 focus:ring-sky/20 transition disabled:opacity-50"
                 />
               </div>
 
               {/* Error Message */}
               {message.type === "error" && (
-                <div className="flex gap-2 rounded-lg bg-red-500/10 border border-red-500/30 p-3">
+                <div className="flex gap-2 rounded-lg bg-red-500/10 border border-red-500/30 p-2 sm:p-2.5">
                   <AlertCircle
-                    size={18}
-                    className="text-red-500 flex-shrink-0 mt-0.5"
+                    size={16}
+                    className="sm:size-[18px] text-red-500 flex-shrink-0 mt-0.5"
                   />
-                  <p className="text-sm text-red-600 dark:text-red-400">
+                  <p className="text-xs text-red-600 dark:text-red-400">
                     {message.text}
                   </p>
                 </div>
               )}
 
-              {/* Submit Button */}
+              {/* Submit Button - Original Sky/Sunset/Teal Gradient */}
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full mt-6 flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-sky via-sunset to-teal px-6 py-2.5 font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 transition"
+                className="w-full mt-4 flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-sky via-sunset to-teal px-6 py-2 font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 transition"
               >
                 <Send size={16} />
                 {isLoading ? "Submitting..." : "Get Travel Plan"}

@@ -73,8 +73,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Screenshot/Preview Image */}
-          <div className="rounded-2xl sm:rounded-[32px] overflow-hidden border border-sky/30 shadow-premium bg-white dark:bg-ocean/90 mb-6 sm:mb-8">
+          {/* Screenshot/Preview Image - Reduced Size */}
+          <div className="max-w-4xl mx-auto rounded-2xl sm:rounded-[32px] overflow-hidden border border-sky/30 shadow-premium bg-white dark:bg-ocean/90 mb-6 sm:mb-8">
             <img 
               src="/assets/travelintelll.png" 
               alt="TravelIntell AI Assistant Preview"
@@ -88,6 +88,40 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 rounded-full bg-ocean px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold text-white shadow-premium transition hover:bg-sunset hover:text-ocean dark:bg-white dark:text-ocean">
               <Sparkles size={16} /> Try AI Travel Planner
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* HappyFlying Home Video Section - Continuous Autoplay */}
+      <section className="section bg-gradient-to-b from-mist to-white px-4 sm:px-5 py-12 sm:py-16">
+        <div className="container-premium">
+          <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
+            <span className="inline-flex items-center gap-2 rounded-full border border-sky/40 bg-sky/10 px-3 sm:px-4 py-1 sm:py-1.5 text-xs font-bold uppercase tracking-widest text-sky">
+              <Play size={14} /> Experience HappyFlying
+            </span>
+            <h2 className="mt-4 sm:mt-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-ocean">
+              Discover Your Next
+              <span className="block bg-gradient-to-r from-sky via-sunset to-teal bg-clip-text text-transparent">
+                Dream Destination
+              </span>
+            </h2>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-ocean/80 px-2 sm:px-0">
+              Watch how we craft unforgettable travel experiences tailored just for you.
+            </p>
+          </div>
+
+          {/* Video Player - Continuous Autoplay without Controls */}
+          <div className="max-w-5xl mx-auto rounded-2xl sm:rounded-[32px] overflow-hidden border border-sky/30 shadow-2xl">
+            <video
+              className="w-full h-auto"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src="/happyflyinghome.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>

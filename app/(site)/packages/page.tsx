@@ -143,11 +143,24 @@ export default function PackagesPage() {
               )}
             </div>
 
-            {/* Grid */}
-            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* Grid - Desktop, Horizontal Scroll - Mobile */}
+            <div className="lg:grid lg:gap-6 lg:grid-cols-3 md:grid md:gap-6 md:grid-cols-2 hidden">
               {visible.map((pkg, idx) => (
                 <PackageCard key={pkg._id} pkg={pkg} index={idx} />
               ))}
+            </div>
+
+            {/* Horizontal Scroll Container - Mobile Only */}
+            <div className="md:hidden overflow-x-auto scrollbar-hide -mx-3 px-3">
+              <div className="flex gap-4 pb-4" style={{ scrollSnapType: "x mandatory" }}>
+                {visible.map((pkg, idx) => (
+                  <div key={pkg._id} className="flex-shrink-0 w-[85vw] max-w-[360px]" style={{ scrollSnapAlign: "start" }}>
+                    <PackageCard pkg={pkg} index={idx} />
+                  </div>
+                ))}
+                {/* Spacer to show preview of next card */}
+                <div className="flex-shrink-0 w-8"></div>
+              </div>
             </div>
 
             {/* Load more */}

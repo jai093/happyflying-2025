@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --font-inter: "Inter", "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
@@ -109,6 +109,18 @@ body {
   }
 }
 
+/* iPhone SE and extra small devices (375px and below) */
+@media (max-width: 375px) {
+  .section {
+    padding: 3rem 0.75rem;
+  }
+  
+  .container-premium {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 /* Hide the FlyAgent tab when the page is rendered in embed mode */
 body.embedded-mode #view-tab-agent { display: none !important; }
 
@@ -127,3 +139,12 @@ body.embedded-mode #view-tab-agent { display: none !important; }
   }
 }
 
+/* Hide scrollbar for mobile horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}

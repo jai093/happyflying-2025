@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      screens: {
+        'xs': '375px', // iPhone SE and similar small devices
+      },
       colors: {
         ocean: "#0A1320",
         sky: "#8CB7CC",
